@@ -1,6 +1,8 @@
 package pw.io.booker.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
@@ -8,10 +10,12 @@ import javax.persistence.OneToOne;
 public class Authentication {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int AuthenticationId;
 	@OneToOne
 	private Customer customer;
-	private int token;
+	private String token;
+	
 	public int getAuthenticationId() {
 		return AuthenticationId;
 	}
@@ -24,10 +28,10 @@ public class Authentication {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-	public int getToken() {
+	public String getToken() {
 		return token;
 	}
-	public void setToken(int token) {
+	public void setToken(String token) {
 		this.token = token;
 	}
 	

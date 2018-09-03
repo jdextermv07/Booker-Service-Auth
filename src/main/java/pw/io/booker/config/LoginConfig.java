@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import pw.io.booker.repo.AuthenticationRepository;
+import pw.io.booker.repo.CustomerRepository;
 import pw.io.booker.service.LoginService;
 import pw.io.booker.util.TokenCreator;
 
@@ -11,8 +12,9 @@ import pw.io.booker.util.TokenCreator;
 public class LoginConfig {
 
 	@Bean
-	public LoginService loginService(AuthenticationRepository authenticationRepository) {
-		return new LoginService(authenticationRepository);
+	public LoginService loginService(AuthenticationRepository authenticationRepository, CustomerRepository customerRepository ,
+			TokenCreator tokenCreator) {
+		return new LoginService(authenticationRepository, customerRepository, tokenCreator);
 	}
 	
 	@Bean

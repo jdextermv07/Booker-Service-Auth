@@ -6,5 +6,6 @@ import pw.io.booker.model.Customer;
 
 @Repository
 public interface CustomerRepository extends CrudRepository<Customer, Integer> {
-
+	
+	public Customer findByUsernameAndPassword(String username, String password);
 }
