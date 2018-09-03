@@ -13,8 +13,8 @@ public class LoginService {
 		this.authenticationRepository = authenticationRepository;
 	}
 	
-//	@Transactional
-//	public 
+	@Transactional
+	public Cus
 	
 	
 }
