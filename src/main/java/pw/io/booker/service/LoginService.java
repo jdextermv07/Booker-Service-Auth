@@ -13,7 +13,8 @@ public class LoginService {
 		this.authenticationRepository = authenticationRepository;
 	}
 	
-	@Transactional
+//	@Transactional
+//	public 
 	
 	
 }
